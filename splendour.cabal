@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           splendour
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/splendour#readme>
+homepage:       https://github.com/Sventimir/splendour#readme
+bug-reports:    https://github.com/Sventimir/splendour/issues
+author:         Sventimir & Agentka 00111
+maintainer:     svantimir@gmail.com
+copyright:      2021 Sventimit & Agentka 00111
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/Sventimir/splendour
+
+library
+  exposed-modules:
+      Data.Card
+      Data.Lord
+      Data.Nat
+      Data.Player
+  other-modules:
+      Paths_splendour
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable splendour-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_splendour
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , splendour
+  default-language: Haskell2010
+
+test-suite splendour-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_splendour
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , splendour
+  default-language: Haskell2010
